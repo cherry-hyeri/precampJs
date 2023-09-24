@@ -1,5 +1,7 @@
 const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
+const intervalIdArr = [];
+
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
 container.style.display = "none";
 
@@ -52,5 +54,15 @@ const starter = function () {
   container.style.display = "flex";
   messageContainer.style.display = "none";
   counterMaker();
-  setInterval(counterMaker, 1000);
+  const intervalId = setInterval(counterMaker, 1000);
+  intervalIdArr.push(intervalId);
+};
+
+const setClearInterval = function () {
+  messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
+  messageContainer.style.display = "flex";
+  container.style.display = "none";
+  for (let i = 0; i < intervalIdArr.length; i++) {
+    clearInterval(intervalIdArr[i]);
+  }
 };
