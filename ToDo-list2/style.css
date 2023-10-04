@@ -3,12 +3,19 @@
 }
 
 body {
-  background-color: aliceblue;
+  background-image: url("./images/Clear.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
   min-height: 100vh;
+}
+
+h1 {
+  color: white;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.7);
+  opacity: 80%;
 }
 
 .todo-container {
@@ -23,6 +30,7 @@ body {
   width: 100%;
   font-size: 2rem;
   padding: 0.5rem 2rem 0.5rem 0.5rem;
+  opacity: 0.8;
 }
 
 #todo-list {
@@ -69,5 +77,12 @@ li button:active {
   background-color: #fff;
   padding: 0.2rem 1rem;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 5px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.delete-btn-wrapper button:active {
+  box-shadow: none;
+  margin-top: 3px;
+  margin-left: 3px;
 }
